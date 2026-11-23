@@ -1,0 +1,17 @@
+[profile.default]
+src = "src"
+test = "test"
+out = "out"
+cache_path = "cache"
+solc_version = "0.8.20"
+evm_version = "cancun"
+optimizer = false
+remappings = [
+    "forge-std/=lib/forge-std/src/"
+]
+
+# Morpheus bounty PoC - C-L4-1 (BuildersV4 withdraw-lock trap).
+# Fork is pinned in-code: test/ForkLane4.t.sol setUp() calls
+# vm.createSelectFork("https://base-rpc.publicnode.com", 61369794)
+# (Base mainnet block 61,369,794). One command from the repo root:
+#   forge test
